@@ -15,9 +15,9 @@ class MainWindow(QMainWindow):
 
     def __init__(self, *args, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
-    
+
         self.setWindowTitle("My Awesome App")
-    
+
         layout = QVBoxLayout()
         widgets = [QCheckBox,
                    QComboBox,
@@ -35,10 +35,10 @@ class MainWindow(QMainWindow):
                    QSlider,
                    QSpinBox,
                    QTimeEdit]
-    
+
         for w in widgets:
             layout.addWidget(w())
-            
+
         widget = QWidget()
         widget.setLayout(layout)
 
@@ -53,11 +53,10 @@ class MainWindow(QMainWindow):
 app = QApplication(sys.argv)
 
 window = MainWindow()
-window.show() # IMPORTANT!!!!! Windows are hidden by default.
+window.show()  # IMPORTANT!!!!! Windows are hidden by default.
 
 # Start the event loop.
 app.exec_()
-
 
 # Your application won't reach here until you exit and the event
 # loop has stopped.
